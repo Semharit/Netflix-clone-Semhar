@@ -9,8 +9,9 @@ const Banner = () => {
     (async () => {
       try {
         const request = await axios.get(requests.fetchNetflixOriginals);
-       
+
         setMovie(
+          ////sets a random movie from an array of results retrieved from an API request
           request.data.results[
             Math.floor(Math.random() * request.data.results.length)
           ]
@@ -19,9 +20,9 @@ const Banner = () => {
         console.log("error", error);
       }
     })();
-  }, []);
+  }, []); //// Empty dependency array ensures this runs only once when the component mounts
 
-  function truncate(str, n) {
+  function truncate(str, n) {////truncate limites our specified length and append ellipses as requestd
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
   return (
@@ -29,7 +30,8 @@ const Banner = () => {
       className="banner"
       style={{
         backgroundSize: "cover",
-        backgroundImage: `url('https://image.tmdb.org/t/p/original${movie?.backdrop_path}')`,
+        ////Template literals. This embeds the result of the expression into a string.
+        backgroundImage: `url('https://image.tmdb.org/t/p/original${movie?.backdrop_path}')`, ////we use the optional chaininig operator to check if the movie exist and avoid throwing error.
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}

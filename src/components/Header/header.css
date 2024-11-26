@@ -41,11 +41,24 @@
     cursor: pointer;
     
 }
- @media (max-width:768px){
+ /* @media (max-width:768px){
     .header-left ul li:not(:first-child){
         display: none;
     }
 
- }
+ } */
+ @media (max-width: 768px) {
+  /* .header-left ul li:not(:first-child) {
+    display: none;
+  } */
+  .header_left ul li {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .header_left ul li {
+    display: none;
+  }
+}
 
  

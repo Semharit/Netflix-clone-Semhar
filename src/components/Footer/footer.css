@@ -44,3 +44,19 @@
     font-size: 12px;
     margin-bottom:10px;
 }
+@media (max-width: 900px) {
+  .footer_inner_container {
+    width: 75%;
+  }
+  .footer_icons {
+    width: 16%;
+  }
+  .service_code {
+    width: 16%;
+  }
+}
+@media (max-width: 768px) {
+  .footer_inner_container {
+    width: 95%;
+  }
+}

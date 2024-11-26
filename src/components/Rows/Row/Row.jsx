@@ -12,10 +12,11 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   const base_url = "https://image.tmdb.org/t/p/original";
 
   useEffect(() => {
+    //fetch movie data
     (async () => {
       try {
        
-        const request = await axios.get(fetchUrl);
+        const request = await axios.get(fetchUrl);//sends get request to the api endpoint
        
         setMovie(request.data.results);
       } catch (error) {
